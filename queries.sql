@@ -5,3 +5,10 @@ insert into class(name, `time`) values ('Math', '08:30'), ('Logic', '10:30');
 
 insert into student_class (student_id, class_id)
 values (1,1), (2,1), (3,1), (4,2), (5,2);
+
+select s.name, c.name 
+from student_class sc
+inner join student s on sc.student_id = s.id 
+inner join class c on sc.class_id = c.id
+where c.name = 'Logic';
+
